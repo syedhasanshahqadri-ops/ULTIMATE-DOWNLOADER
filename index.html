@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SnapVault - Download any video or photo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<header class="top">
+  <a class="brand" href="#"><img src="https://api.iconify.design/lucide:orbit.svg?color=%2322E5FF" alt=""><span>SnapVault</span></a>
+  <nav>
+    <button class="ghost" id="langBtn">اردو</button>
+    <button class="ghost" id="libBtn"><img src="https://api.iconify.design/lucide:folder-down.svg?color=white" alt=""><span data-i18n="library">Library</span><b id="libCount">0</b></button>
+    <button class="solid" id="signBtn"><img src="https://api.iconify.design/lucide:log-in.svg?color=%230E0A24" alt=""><span data-i18n="signin">Sign in</span></button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1 data-i18n="title">Paste a link. Keep the moment.</h1>
+    <p data-i18n="sub">One place to save videos and photos from every major platform.</p>
+    <div class="paste">
+      <img src="https://api.iconify.design/lucide:link-2.svg?color=%2322E5FF" alt="">
+      <input id="url" type="url" placeholder="enter the copied url" autocomplete="off" spellcheck="false">
+      <button id="pasteBtn" class="ghost" data-i18n="paste">Paste</button>
+      <button id="goBtn" class="solid" data-i18n="fetch">Fetch</button>
+    </div>
+    <p id="msg" class="msg" role="status"></p>
+
+    <article id="preview" class="preview" hidden>
+      <div class="thumb"><img id="pvImg" alt=""><span id="pvDur"></span></div>
+      <div class="meta">
+        <small id="pvSrc"></small>
+        <h2 id="pvTitle"></h2>
+        <div class="row">
+          <button class="solid big" id="dlVideo"><img src="https://api.iconify.design/lucide:clapperboard.svg?color=%230E0A24" alt=""><span data-i18n="dlVideo">Download video</span></button>
+          <button class="ghost big" id="dlPhoto"><img src="https://api.iconify.design/lucide:image-down.svg?color=white" alt=""><span data-i18n="dlPhoto">Download photo</span></button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="block">
+    <h2 data-i18n="platforms">Supported platforms</h2>
+    <div id="platGrid" class="plat"></div>
+  </section>
+
+  <section class="block">
+    <h2 data-i18n="features">What you get</h2>
+    <div id="featGrid" class="feat"></div>
+  </section>
+</main>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="dh"><h2 data-i18n="library">Library</h2><button class="ghost" data-close="drawer"><img src="https://api.iconify.design/lucide:x.svg?color=white" alt="Close"></button></div>
+  <div id="libList"></div>
+</aside>
+
+<div id="qModal" class="modal" hidden><div class="card">
+  <h3 data-i18n="chooseFormat">Choose format</h3>
+  <div class="seg" id="kindSeg">
+    <button data-kind="video" class="on" data-i18n="kVideo">Video</button>
+    <button data-kind="audio" data-i18n="kAudio">Music (audio only)</button>
+  </div>
+  <label data-i18n="quality">Quality</label>
+  <div class="seg" id="qSeg"></div>
+  <div class="row end"><button class="ghost" data-close="qModal" data-i18n="cancel">Cancel</button><button class="solid" id="startDl" data-i18n="start">Start download</button></div>
+</div></div>
+
+<div id="sModal" class="modal" hidden><div class="card">
+  <h3 data-i18n="signin">Sign in</h3>
+  <div id="signForm">
+    <p data-i18n="signNote">Add your Gmail so your library stays saved on this device.</p>
+    <input id="mail" type="email" placeholder="you@gmail.com">
+    <div class="row end"><button class="ghost" data-close="sModal" data-i18n="cancel">Cancel</button><button class="solid" id="saveMail" data-i18n="signin">Sign in</button></div>
+  </div>
+  <div id="signedBox" hidden><p id="who"></p><button class="ghost" id="signOut" data-i18n="signout">Sign out</button></div>
+  <hr>
+  <h4 data-i18n="aboutT">About</h4>
+  <p data-i18n="aboutP"></p>
+  <p class="credit">Designed by SYED HASAN SHAH</p>
+</div></div>
+
+<script src="js/lang/en.js"></script>
+<script src="js/lang/ur.js"></script>
+<script src="js/platforms.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
